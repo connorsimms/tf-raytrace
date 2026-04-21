@@ -1,3 +1,4 @@
+.direnv/
 build/
 *.ppm
 .DS_Store
