@@ -51,7 +51,6 @@ class camera {
 
         std::clog << "Rendering using Taskflow across " << executor.num_workers() << " workers...\n";
 
-        //for (int j = 0; j < image_height; j++) {
         taskflow.for_each_index(0, image_height, 1, [&](int j) {
 
             for (int i = 0; i < image_width; i++) {
@@ -69,6 +68,7 @@ class camera {
         executor.run(taskflow).wait();
 
 #else
+
         std::clog << "Rendering sequentially (1 worker)...\n";
 
         for (int j = 0; j < image_height; j++) {
