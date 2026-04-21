@@ -9,10 +9,12 @@ I modified `color.h` and `camera.h` to use Taskflow's `for_each_index` algorithm
 I benchmarked the performance difference on my Apple Silicon M2 Macbook, using C++ `std::chrono` timers.
 
 ### Results
-| Implementation | Execution Time | Speedup |
-| :--- | :--- | :--- |
-| **Sequential** | ~19.6s | 1.00x |
-| **Taskflow** | ~4.5s | **4.35x** |
+| Implementation | Workers | Execution Time | Speedup |
+| :--- | :--- | :--- |:--- |
+| **Sequential** | 1 | ~19.6s | 1.00x |
+| **Taskflow** | 8* | ~4.5s | **4.35x** |
+
+*\*Taskflow defaults to the number of available threads.*
 
 ## Dependencies
 * C++20 compatible compiler
