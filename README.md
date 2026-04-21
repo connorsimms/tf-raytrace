@@ -4,6 +4,16 @@ A simple, multithreaded adaptation of Peter Shirley's [*Ray Tracing in One Weeke
 
 I modified `color.h` and `camera.h` to use Taskflow's `for_each_index` algorithm.
 
+## Performance
+
+I benchmarked the performance difference on my Apple Silicon M2 Macbook, using C++ `std::chrono` timers.
+
+### Results
+| Implementation | Execution Time | Speedup |
+| :--- | :--- | :--- |
+| **Sequential** | ~19.6s | 1.00x |
+| **Taskflow** | ~4.5s | **4.35x** |
+
 ## Dependencies
 * C++20 compatible compiler
 * CMake
